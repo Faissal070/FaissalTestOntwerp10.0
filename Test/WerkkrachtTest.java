@@ -125,5 +125,28 @@ class WerkkrachtTest {
         Assertions.assertEquals(false, persoonI.checkDoktersAssistend());
         Assertions.assertEquals(true, persoonI.checkDokter());
     }
+    @Test
+    void CheckMedewerker(){
+        Werkkracht Dokter1  = new Werkkracht("ismail",676767678,3100);
+        Werkkracht Dokter2 = new Werkkracht("Sabon", 87654, 33543);
+        Werkkracht.personen.add(Dokter2);
+        assertEquals("Geweigerd!", Dokter1.CheckmedewerkerToegang(Dokter1.getNaam(),Dokter1.getCode(),Dokter1.getBsn(),Dokter1.checkDokter()));
+        assertEquals("Ingelogd!", Dokter2.CheckmedewerkerToegang(Dokter2.getNaam(),Dokter2.getCode(),Dokter2.getBsn(),Dokter2.checkDokter()));
+
+
+        Werkkracht Dokterassistent1 = new Werkkracht("ismaile",676767678,22050);
+        Werkkracht Dokterassistent2 = new Werkkracht("Chantal", 989076547, 2789);
+        assertEquals("Geweigerd!", Dokterassistent1.CheckmedewerkerToegang(Dokterassistent1.getNaam(),Dokterassistent1.getCode(),Dokterassistent1.getBsn(),Dokterassistent1.checkDokter()));
+        assertEquals("Ingelogd!", Dokterassistent2.CheckmedewerkerToegang(Dokterassistent2.getNaam(),Dokterassistent2.getCode(),Dokterassistent2.getBsn(),Dokterassistent2.checkDokter()));
+
+        Werkkracht Receptiemedewerker1 = new Werkkracht("Lisa", 65642, 987892);
+        Werkkracht Receptiemedewerker2 = new Werkkracht("Diderik", 156789768, 1567);
+        Werkkracht.personen.add(Receptiemedewerker2);
+        assertEquals("Geweigerd!", Receptiemedewerker1.CheckmedewerkerToegang(Receptiemedewerker1.getNaam(),Receptiemedewerker1.getCode(),Receptiemedewerker1.getBsn(),Receptiemedewerker1.checkDokter()));
+        assertEquals("Ingelogd!", Receptiemedewerker2.CheckmedewerkerToegang(Receptiemedewerker2.getNaam(),Receptiemedewerker2.getCode(),Receptiemedewerker2.getBsn(),Receptiemedewerker2.checkDokter()));
+
+
+
+    }
 
 }
