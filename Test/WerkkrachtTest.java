@@ -53,4 +53,30 @@ class WerkkrachtTest {
 
 
     }
+    @Test
+    void EquavalentieklassenRandwaarden(){
+        Werkkracht functie = new Werkkracht();
+        int code = 2098;
+        boolean receptiemedewerker = code > 2000;
+        Assertions.assertEquals(true, functie.checkReceptiemedewerker(receptiemedewerker));
+
+        Werkkracht functie3 = new Werkkracht();
+        int code3 = 1900;
+        boolean receptiemedewerker3 = code > 2000;
+        Assertions.assertEquals(false, functie.checkReceptiemedewerker(receptiemedewerker));
+        //foutmelding omdat code niet gemaakt is. Andere tests werken gewoon omdat true verwacht word in methode.
+
+        Werkkracht functie1 = new Werkkracht();
+        int code1 = 3098;
+        boolean doktersAssistent = code > 3000;
+        Assertions.assertEquals(true, functie.checkDoktersAssistend(doktersAssistent));
+
+        Werkkracht functie2 = new Werkkracht();
+        int code2 = 4098;
+        boolean dokter = code > 3000;
+        Assertions.assertEquals(true, functie.checkDokter(dokter));
+
+
+    }
+
 }
