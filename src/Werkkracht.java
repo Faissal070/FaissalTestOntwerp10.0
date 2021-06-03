@@ -6,10 +6,6 @@ public class Werkkracht {
     private int bsn;
     public static ArrayList<Werkkracht> personen = new ArrayList<>();
 
-    Werkkracht(){
-
-    }
-
     Werkkracht (String naam, Integer bsn, Integer code){
         this.naam = naam;
         this.bsn = bsn;
@@ -72,9 +68,13 @@ public class Werkkracht {
         }
         return false;
     }
-    public String CheckmedewerkerToegang(String naam, int code, int bsn, boolean medewerker){
-        return "";
+    public String CheckmedewerkerToegang(String naam, int code, int bsn, boolean medewerker) {
+        int numDigits = String.valueOf(this.code).length();
+        int numDigits2 = String.valueOf(this.bsn).length();
+        if (personen.contains(this) && numDigits == 4 && numDigits2 == 9 && checkDokter() ==  true || checkDoktersAssistend() == true || checkReceptiemedewerker() == true) {
+            return "Ingelogd!";
 
+        }
+        return "Geweigerd!";
     }
-
-}
+    }
