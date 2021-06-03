@@ -53,30 +53,77 @@ class WerkkrachtTest {
 
 
     }
+//    @Test
+//    void EquavalentieklassenRandwaarden(){
+//        Werkkracht functie = new Werkkracht();
+//        int code = 2098;
+//        boolean receptiemedewerker = code > 2000;
+//        Assertions.assertEquals(true, functie.checkReceptiemedewerker(receptiemedewerker));
+//
+//        Werkkracht functie3 = new Werkkracht();
+//        int code3 = 1900;
+//        boolean receptiemedewerker3 = code > 2000;
+//        Assertions.assertEquals(false, functie.checkReceptiemedewerker(receptiemedewerker));
+//        //foutmelding omdat code niet gemaakt is. Andere tests werken gewoon omdat true verwacht word in methode.
+//
+//        Werkkracht functie1 = new Werkkracht();
+//        int code1 = 3098;
+//        boolean doktersAssistent = code > 3000;
+//        Assertions.assertEquals(true, functie.checkDoktersAssistend(doktersAssistent));
+//
+//        Werkkracht functie2 = new Werkkracht();
+//        int code2 = 4098;
+//        boolean dokter = code > 3000;
+//        Assertions.assertEquals(true, functie.checkDokter(dokter));
+
+
+
     @Test
-    void EquavalentieklassenRandwaarden(){
-        Werkkracht functie = new Werkkracht();
-        int code = 2098;
-        boolean receptiemedewerker = code > 2000;
-        Assertions.assertEquals(true, functie.checkReceptiemedewerker(receptiemedewerker));
+    void Equavalentie() {
+        Werkkracht persoonA = new Werkkracht("Ismail", 765432456, 1160);
+        Assertions.assertEquals(true, persoonA.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonA.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonA.checkDokter());
 
-        Werkkracht functie3 = new Werkkracht();
-        int code3 = 1900;
-        boolean receptiemedewerker3 = code > 2000;
-        Assertions.assertEquals(false, functie.checkReceptiemedewerker(receptiemedewerker));
-        //foutmelding omdat code niet gemaakt is. Andere tests werken gewoon omdat true verwacht word in methode.
+        Werkkracht persoonB = new Werkkracht("Jaap", 765432456, 1500);
+        Assertions.assertEquals(true, persoonB.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonB.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonB.checkDokter());
 
-        Werkkracht functie1 = new Werkkracht();
-        int code1 = 3098;
-        boolean doktersAssistent = code > 3000;
-        Assertions.assertEquals(true, functie.checkDoktersAssistend(doktersAssistent));
+        Werkkracht persoonC = new Werkkracht("Jaap", 765432456, 1900);
+        Assertions.assertEquals(true, persoonC.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonC.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonC.checkDokter());
 
-        Werkkracht functie2 = new Werkkracht();
-        int code2 = 4098;
-        boolean dokter = code > 3000;
-        Assertions.assertEquals(true, functie.checkDokter(dokter));
+        Werkkracht persoonD = new Werkkracht("Jaap", 765432456, 2100);
+        Assertions.assertEquals(false, persoonD.checkReceptiemedewerker());
+        Assertions.assertEquals(true, persoonD.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonD.checkDokter());
 
+        Werkkracht persoonE = new Werkkracht("Jaap", 765439456, 2500);
+        Assertions.assertEquals(false, persoonE.checkReceptiemedewerker());
+        Assertions.assertEquals(true, persoonE.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonE.checkDokter());
 
+        Werkkracht persoonF = new Werkkracht("Jaap", 765434456, 2800);
+        Assertions.assertEquals(false, persoonF.checkReceptiemedewerker());
+        Assertions.assertEquals(true, persoonF.checkDoktersAssistend());
+        Assertions.assertEquals(false, persoonF.checkDokter());
+
+        Werkkracht persoonG = new Werkkracht("Jaap", 765433456, 3100);
+        Assertions.assertEquals(false, persoonG.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonG.checkDoktersAssistend());
+        Assertions.assertEquals(true, persoonG.checkDokter());
+
+        Werkkracht persoonH = new Werkkracht("Jaap", 765431456, 3400);
+        Assertions.assertEquals(false, persoonH.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonH.checkDoktersAssistend());
+        Assertions.assertEquals(true, persoonH.checkDokter());
+
+        Werkkracht persoonI = new Werkkracht("Jaap", 765432456, 3800);
+        Assertions.assertEquals(false, persoonI.checkReceptiemedewerker());
+        Assertions.assertEquals(false, persoonI.checkDoktersAssistend());
+        Assertions.assertEquals(true, persoonI.checkDokter());
     }
 
 }
