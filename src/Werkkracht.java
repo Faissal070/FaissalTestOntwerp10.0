@@ -6,6 +6,10 @@ public class Werkkracht {
     private int bsn;
     public static ArrayList<Werkkracht> personen = new ArrayList<>();
 
+    Werkkracht(){
+
+    }
+
     Werkkracht (String naam, Integer bsn, Integer code){
         this.naam = naam;
         this.bsn = bsn;
@@ -47,5 +51,16 @@ public class Werkkracht {
         }
         return "Je code klopt niet";
 
+    }
+    public boolean checkReceptiemedewerker(boolean codereceptie) {
+        return true;
+
+    }
+
+    public boolean checkDoktersAssistend(boolean codeDoktersassistent){
+        return true;
+    }
+    public boolean checkDokter(boolean codeDokter){
+        return true;
     }
 }
