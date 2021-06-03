@@ -72,4 +72,9 @@ public class Werkkracht {
         }
         return false;
     }
+    public String CheckmedewerkerToegang(String naam, int code, int bsn, boolean medewerker){
+        return "";
+
+    }
+
 }
