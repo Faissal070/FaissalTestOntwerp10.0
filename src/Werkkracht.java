@@ -52,15 +52,24 @@ public class Werkkracht {
         return "Je code klopt niet";
 
     }
-    public boolean checkReceptiemedewerker(boolean codereceptie) {
-        return true;
+    public boolean checkReceptiemedewerker() {
+        if (code > 1000 && code < 2000) {
+            return true;
 
+        }
+        return false;
     }
 
-    public boolean checkDoktersAssistend(boolean codeDoktersassistent){
-        return true;
+    public boolean checkDoktersAssistend () {
+        if (code > 2000 && code < 3000) {
+            return true;
+        }
+        return false;
     }
-    public boolean checkDokter(boolean codeDokter){
-        return true;
+    public boolean checkDokter (){
+        if (code > 3000 && code < 4000) {
+            return true;
+        }
+        return false;
     }
 }
